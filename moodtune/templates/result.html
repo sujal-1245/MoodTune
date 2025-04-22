@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoodTune Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Toast -->
+</head>
+<body>
+    <div class="container">
+        <h1>Detected Emotion: {{ emotion.capitalize() }}</h1>
+
+        <div class="photo-preview">
+            <img src="{{ '/' + image_path }}" alt="Uploaded Photo" width="250px">
+        </div>
+
+        {% if song_path %}
+        <h2>Here's a song for you:</h2>
+        <div class="player">
+            <audio controls autoplay>
+                <source src="{{ '/' + song_path }}" type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
+        </div>
+        {% else %}
+        <p>No songs available for this mood!</p>
+        {% endif %}
+
+        <div class="upload-again">
+            <a href="{{ url_for('index') }}">Upload another photo</a>
+        </div>
+    </div>
+
+    <!-- Script to show toast message when emotion is detected -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        // Toast message when emotion is detected
+        Swal.fire({
+            toast: true,
+            position: 'top-end',
+            icon: 'success',
+            title: 'Mood Detected: {{ emotion.capitalize() }} 🎵',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true
+        });
+    </script>
+</body>
+</html>

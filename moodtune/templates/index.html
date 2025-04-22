@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoodTune - Upload Your Photo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload a photo to get your song! 🎵</h1>
+        <form method="POST" enctype="multipart/form-data" onsubmit="showLoader()">
+            <!-- Custom file input -->
+            <input type="file" name="photo" id="photo" accept="image/*" required onchange="showFileName()">
+            <label for="photo">Choose a Photo</label> <!-- This triggers the file input -->
+
+            <!-- Display selected file name -->
+            <p id="file-name"></p>
+
+            <!-- Detect Mood button initially hidden -->
+            <button type="submit" id="detect-btn" style="display: none;">Detect Mood</button>
+        </form>
+
+        <!-- Loader visibility -->
+        <div id="loader" style="display:none;">
+            <p>Detecting your mood...</p>
+            <img src="{{ url_for('static', filename='images/loader.gif') }}" alt="Loading..." width="100">
+        </div>
+    </div>
+
+    <!-- Script to show loader while processing -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        function showFileName() {
+            const fileInput = document.getElementById('photo');
+            const fileName = fileInput.files[0].name;
+            document.getElementById('file-name').textContent = fileName; // Show the file name
+            document.getElementById('detect-btn').style.display = 'inline-block'; // Show the Detect Mood button
+        }
+
+        function showLoader() {
+            document.getElementById('loader').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

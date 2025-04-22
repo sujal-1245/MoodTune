@@ -1,0 +1,206 @@
+/* Body and container setup */
+body {
+    background: linear-gradient(135deg, #89f7fe, #66a6ff); /* Fresh blue gradient */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95); /* Slightly transparent white background */
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    animation: fadeIn 1.2s ease-out;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+}
+
+/* Header Style */
+h1 {
+    margin-bottom: 1rem;
+    color: #2d2d2d;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Photo preview styles */
+.photo-preview img {
+    margin-top: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.photo-preview img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Form for uploading photo */
+form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Custom file input button */
+input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+input[type="file"] + label {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #66a6ff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Display the file name after selecting a photo */
+#file-name {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 1rem;
+}
+
+/* Hover effect for file input label */
+input[type="file"]:hover + label {
+    background-color: #558de8;
+    transform: translateY(-3px);
+}
+
+/* Hide "Detect Mood" button by default */
+button {
+    background: #66a6ff;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hidden */
+}
+
+/* Show button when a file is selected */
+#photo:valid + label + #file-name + button {
+    display: inline-block; /* Show button when file is selected */
+}
+
+/* Loader Style */
+#loader {
+    margin-top: 1rem;
+    display: none;
+}
+
+#loader img {
+    width: 100px;
+}
+
+/* Music Player Section */
+.player {
+    margin: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #3178d4, #034387); /* Blue/Dark Blue shades */
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(65, 235, 102, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.player:hover {
+    transform: scale(1.05);
+}
+
+/* Custom Audio Player */
+audio {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Player Controls Styling */
+audio::-webkit-media-controls-panel {
+    background: #e3ffcb;
+    border-radius: 10px; 
+}
+
+audio::-webkit-media-controls-play-button {
+    background: #66a6ff;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+}
+
+audio::-webkit-media-controls-play-button:hover {
+    background: #558de8;
+}
+
+audio::-webkit-media-controls-volume-slider {
+    background: #66a6ff;
+    height: 5px;
+    border-radius: 5px;
+}
+
+/* Upload again link */
+.upload-again a {
+    text-decoration: none;
+    background: #66a6ff;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    transition: background 0.3s, transform 0.3s ease;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+
+.upload-again a:hover {
+    background: #558de8;
+    transform: translateY(-4px);
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Toast for emotion detection */
+.swal2-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #66a6ff;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    padding: 1rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
