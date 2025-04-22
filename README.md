@@ -13,11 +13,6 @@ MoodTune is an AI-powered web application that detects the mood from a user-uplo
 ![image](https://github.com/user-attachments/assets/f244b134-5d21-45b7-8a2b-e5e370341032)
 ![image](https://github.com/user-attachments/assets/9e0a44cb-214e-421f-a050-b92d41aed38a)
 
-
-## Contributors
-* [Sujal-1245](https://github.com/sujal-1245)
-* [Priyanshu-654](https://github.com/priyanshu-654)
-
 ## Folder Structure
 
 ```
@@ -98,6 +93,10 @@ requests==2.28.1
 
    Open your browser and go to [http://127.0.0.1:5000](http://127.0.0.1:5000) to start using the app!
 
+## Demo video
+
+
+
 ## How It Works
 
 1. **Upload Photo**: The user uploads a photo from their device.
@@ -105,5 +104,8 @@ requests==2.28.1
 3. **Song Recommendation**: Once the mood is detected, a song matching the detected emotion is recommended.
 4. **Listen**: The song is embedded in the web page for the user to listen to.
 
+## Contributors
+* [Sujal-1245](https://github.com/sujal-1245)
+* [Priyanshu-654](https://github.com/priyanshu-654)
 
 ---
