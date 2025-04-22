@@ -97,6 +97,10 @@ requests==2.28.1
 
 
 
+https://github.com/user-attachments/assets/01505f4a-e59b-4cd6-a7a8-297f1dca7596
+
+
+
 ## How It Works
 
 1. **Upload Photo**: The user uploads a photo from their device.
